@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2012 Xamarin Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -52,14 +36,13 @@ namespace Mono.Samples.Notepad
 				cmd.ExecuteNonQuery ();
 			}
 
-			// Create a sample note to get the user started
 			sql = "INSERT INTO ITEMS (Title, Description, Level, Modified) VALUES (@Title, @Title, @Level, @Modified);";
 
 			using (var cmd = connection.CreateCommand ()) {
 				cmd.CommandText = sql;
 				cmd.Parameters.AddWithValue ("@Title", "Sample Note");
 				cmd.Parameters.AddWithValue ("@Description", "Sample Note");
-				cmd.Parameters.AddWithValue("@Level", 2);
+				cmd.Parameters.AddWithValue ("@Level", 2);
 				cmd.Parameters.AddWithValue ("@Modified", DateTime.Now);
 
 				cmd.ExecuteNonQuery ();
@@ -150,7 +133,6 @@ namespace Mono.Samples.Notepad
 				using (var cmd = conn.CreateCommand ()) {
 
 					if (note.Id < 0) {
-						// Do an insert
 						cmd.CommandText = "INSERT INTO ITEMS (Title, Description, Level, Modified) VALUES (@Title, @Description, @Level, @Modified); SELECT last_insert_rowid();";
 						cmd.Parameters.AddWithValue ("@Title", note.Title);
 						cmd.Parameters.AddWithValue ("@Description", note.Description);
@@ -159,7 +141,6 @@ namespace Mono.Samples.Notepad
 
 						note.Id = (long)cmd.ExecuteScalar ();
 					} else {
-						// Do an update
 						cmd.CommandText = "UPDATE ITEMS SET Description = @Description, Title = @Title, Level = @Level, Modified = @Modified WHERE Id = @Id";
 						cmd.Parameters.AddWithValue ("@Id", note.Id);
 						cmd.Parameters.AddWithValue ("@Title", note.Title);

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Android.App;
 using Android.Content;
@@ -10,11 +9,10 @@ namespace Mono.Samples.Notepad
 	{
 		private Activity activity;
 
-		Dictionary<string, int> imageResDic;
+		private Dictionary<string, int> imageResDic;
 
-
-		public NoteAdapter (Activity activity, Context context, int textViewResourceId, object[] objects)
-			: base (context, textViewResourceId, objects)
+		public NoteAdapter(Activity activity, Context context, int textViewResourceId, object[] objects)
+			: base(context, textViewResourceId, objects)
 		{
 			this.activity = activity;
 			this.imageResDic = new Dictionary<string, int>()
@@ -25,28 +23,24 @@ namespace Mono.Samples.Notepad
 			};
 		}
 
-		public override Android.Views.View GetView (int position, Android.Views.View convertView, Android.Views.ViewGroup parent)
+		public override Android.Views.View GetView(int position, Android.Views.View convertView, Android.Views.ViewGroup parent)
 		{
-			//Get our object for this position
-			var item = (Note)this.GetItem (position);
+			var item = (Note)this.GetItem(position);
+			var view = (convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.NoteListRow, parent, false)) as LinearLayout;
 
-			// Try to reuse convertView if it's not null, otherwise inflate it from our item layout
-			// This gives us some performance gains by not always inflating a new view
-			var view = (convertView ?? activity.LayoutInflater.Inflate (Resource.Layout.NoteListRow, parent, false)) as LinearLayout;
-
-			view.FindViewById<TextView> (Resource.Id.body).Text = Left (item.Title.Replace ("\n", " "), 25);
-			view.FindViewById<TextView> (Resource.Id.modified).Text = item.ModifiedTime.ToString ();
+			view.FindViewById<TextView>(Resource.Id.body).Text = Left(item.Title.Replace("\n", " "), 25);
+			view.FindViewById<TextView>(Resource.Id.modified).Text = item.ModifiedTime.ToString();
 			view.FindViewById<ImageView>(Resource.Id.level).SetImageResource(imageResDic[item.Level.ToString()]);
 
 			return view;
 		}
 
-		private string Left (string text, int length)
+		private string Left(string text, int length)
 		{
 			if (text.Length <= length)
 				return text;
 
-			return text.Substring (0, length);
+			return text.Substring(0, length);
 		}
 	}
 }

@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LinedEditText.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="NoteAdapter.cs" />
     <Compile Include="NoteEditorActivity.cs" />
@@ -56,6 +55,7 @@
     <Compile Include="NotesListActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Async\NoteAsyncHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\NoteEditor.axml" />
@@ -86,13 +86,7 @@
     <AndroidResource Include="Resources\Values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Readme.md" />
     <None Include="Properties\AndroidManifest.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Metadata.xml" />
-    <Content Include="Screenshots\notepad1.png" />
-    <Content Include="Screenshots\notepad2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -103,5 +97,6 @@
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\xml\" />
     <Folder Include="Resources\menu\" />
+    <Folder Include="Async\" />
   </ItemGroup>
 </Project>

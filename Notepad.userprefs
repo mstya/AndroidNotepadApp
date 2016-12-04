@@ -1,23 +1,22 @@
 ﻿<Properties StartupConfiguration="{CB6BAF1A-9CA2-4112-B5A1-6E2B88416781}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Resources/menu/options_menu.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Async/NoteAsyncHandler.cs">
     <Files>
-      <File FileName="NoteEditorActivity.cs" Line="59" Column="21" />
-      <File FileName="NoteRepository.cs" Line="151" Column="1" />
+      <File FileName="NoteEditorActivity.cs" Line="74" Column="43" />
+      <File FileName="NoteRepository.cs" Line="143" Column="14" />
       <File FileName="Note.cs" Line="19" Column="11" />
-      <File FileName="NotesListActivity.cs" Line="88" Column="6" />
-      <File FileName="NoteAdapter.cs" Line="18" Column="4" />
+      <File FileName="NotesListActivity.cs" Line="113" Column="7" />
+      <File FileName="NoteAdapter.cs" Line="21" Column="43" />
       <File FileName="Resources/xml/searchable.xml" Line="2" Column="1" />
-      <File FileName="Resources/Values/strings.xml" Line="16" Column="12" />
+      <File FileName="Resources/Values/strings.xml" Line="19" Column="27" />
       <File FileName="Properties/AndroidManifest.xml" Line="7" Column="12" />
-      <File FileName="Resources/menu/options_menu.xml" Line="4" Column="37" />
+      <File FileName="Async/GetNotesAsync.xml" Line="1" Column="1" />
+      <File FileName="Async/NoteAsyncHandler.cs" Line="10" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/Vacheslav/Downloads/NotePad-Mono/NoteRepository.cs" relfile="NoteRepository.cs" line="46" column="15" />
-      <Breakpoint file="/Users/Vacheslav/Downloads/NotePad-Mono/NotesListActivity.cs" relfile="NotesListActivity.cs" line="67" column="1" />
-      <Breakpoint file="/Users/Vacheslav/Downloads/NotePad-Mono/NotesListActivity.cs" relfile="NotesListActivity.cs" line="80" column="26" />
+      <Breakpoint file="/Users/Vacheslav/Downloads/NotePad-Mono/NoteRepository.cs" relfile="NoteRepository.cs" line="30" column="15" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
