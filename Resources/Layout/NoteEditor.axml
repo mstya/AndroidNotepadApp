@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linearLayout1">
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите название" />
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="224.0dp"
+        android:hint="Введите описание"
+        android:id="@+id/description" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/level" />
+    <LinearLayout
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:minHeight="25px"
+        android:orientation="horizontal"
+        android:gravity="right">
+        <Button
+            android:text="Сохранить"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/save" />
+        <Button
+            android:text="Отмена"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancel" />
+    </LinearLayout>
+</LinearLayout>
