@@ -1,22 +1,45 @@
 ﻿<Properties StartupConfiguration="{CB6BAF1A-9CA2-4112-B5A1-6E2B88416781}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Async/NoteAsyncHandler.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="NoteEditorActivity.cs" Line="74" Column="43" />
+      <File FileName="NoteEditorActivity.cs" Line="81" Column="59" />
       <File FileName="NoteRepository.cs" Line="143" Column="14" />
       <File FileName="Note.cs" Line="19" Column="11" />
-      <File FileName="NotesListActivity.cs" Line="113" Column="7" />
+      <File FileName="NotesListActivity.cs" Line="82" Column="18" />
       <File FileName="NoteAdapter.cs" Line="21" Column="43" />
       <File FileName="Resources/xml/searchable.xml" Line="2" Column="1" />
       <File FileName="Resources/Values/strings.xml" Line="19" Column="27" />
       <File FileName="Properties/AndroidManifest.xml" Line="7" Column="12" />
-      <File FileName="Async/GetNotesAsync.xml" Line="1" Column="1" />
-      <File FileName="Async/NoteAsyncHandler.cs" Line="10" Column="30" />
+      <File FileName="Async/NoteAsyncHandler.cs" Line="19" Column="4" />
+      <File FileName="Components/betterpickers-1.6.0.1/samples/BetterPickersSample/BetterPickersSample/MainActivity.cs" Line="14" Column="14" />
+      <File FileName="Components/betterpickers-1.6.0.1/samples/BetterPickersSample/BetterPickersSample/ChoiceListFragment.cs" Line="63" Column="1" />
+      <File FileName="Components/betterpickers-1.6.0.1/samples/BetterPickersSample/BetterPickersSample/ChoiceAdapter.cs" Line="1" Column="1" />
+      <File FileName="Fragments/DatepickerFragment.cs" Line="16" Column="1" />
+      <File FileName="Fragments/TimepickerFragment.cs" Line="17" Column="4" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BetterPickersSample" expanded="True">
+            <Node name="BetterPickersSample" expanded="True" selected="True" />
+          </Node>
+          <Node name="Notepad" expanded="True">
+            <Node name="Notepad" expanded="True">
+              <Node name="ComponentReferenceFolder" expanded="True" />
+              <Node name="Fragments" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="Layout" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/Vacheslav/Downloads/NotePad-Mono/NoteRepository.cs" relfile="NoteRepository.cs" line="30" column="15" />
+      <Breakpoint file="/Users/Vacheslav/Downloads/NotePad-Mono/NotesListActivity.cs" relfile="NotesListActivity.cs" line="142" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

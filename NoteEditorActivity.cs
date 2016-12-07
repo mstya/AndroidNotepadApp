@@ -4,11 +4,12 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
 using System.Collections.Generic;
+using Android.Support.V4.App;
 
 namespace Mono.Samples.Notepad
 {
 	[Activity(Label = "Edit Note", ScreenOrientation = ScreenOrientation.Sensor, ConfigurationChanges = ConfigChanges.KeyboardHidden | ConfigChanges.Orientation)]
-	public class NoteEditorActivity : Activity
+	public class NoteEditorActivity : FragmentActivity// Activity
 	{
 		private Note note;
 		private EditText title;
@@ -42,12 +43,63 @@ namespace Mono.Samples.Notepad
 				["Level 3"] = 3
 			};
 
+			// Get the message from the intent:
+			string message = Intent.Extras.GetString("message", "");
+
 			var note_id = Intent.GetLongExtra("note_id", -1L);
 
 			if (note_id < 0)
 				note = new Note();
 			else
 				note = NoteRepository.GetNote(note_id);
+
+
+			//// Create our Picker Dialog
+			//var p = new BetterPickers.RadialTimePickers.RadialTimePickerDialog();
+
+			//// Set some options
+			//p.SetStartTime(DateTime.Now.Hour, DateTime.Now.Minute);
+			//p.SetDoneText("Finish!");
+
+			//// Wire up the changed handler
+			//p.TimeSet += (sender, e) =>
+			//{
+			//	//ShowToast("RadialTimePicker Set: Hour={0}, Minute={1}", e.P1, e.P2);
+			//};
+
+			//// Show the Dialog
+			//p.Show(this.FragmentManager, null);
+
+
+			//datepickerFragment
+
+			var timeFragment = new TimepickerFragment(this);
+			var dateFragment = new DatepickerFragment(this);
+
+			////Fragment datepickerFragment = this.FindViewById<Fragment>(Resource.Id.datepickerFragment);
+			SupportFragmentManager.BeginTransaction()
+								  .Replace(Resource.Id.dateFragment, dateFragment)
+								  .Commit();
+
+			SupportFragmentManager.BeginTransaction()
+								  .Replace(Resource.Id.timeFragment, timeFragment)
+								  .Commit();
+
+			//While others use the builder pattern like the Date Picker: 
+
+			// Create our picker builder
+			//var p = new BetterPickers.DatePickers.DatePickerBuilder()
+			//	.SetFragmentManager(FragmentManager)
+			//	.SetStyleResId(Resource.Style.BetterPickersDialogFragment_Light);
+
+			//// Add a delegate to handle the picker change      
+			//p.AddDatePickerDialogHandler((reference, year, month, day) =>
+			//{
+			//	ShowToast("DatePicker Set: Ref={0}, Year={1}, Month={2}, Day={3}", reference, year, month, day);
+			//});
+
+			//// Show the Dialog
+			//p.Show();
 		}
 
 		void Save_Button_Click(object sender, EventArgs e)

@@ -17,10 +17,58 @@
         android:layout_height="224.0dp"
         android:hint="Введите описание"
         android:id="@+id/description" />
+    <LinearLayout
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="25px"
+        android:orientation="horizontal"
+        android:gravity="right">
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dateTextView" />
+        <Button
+            android:text="Select date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dateButton" />
+    </LinearLayout>
+    <LinearLayout
+        android:minWidth="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="25px"
+        android:orientation="horizontal"
+        android:gravity="right">
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeTextView" />
+        <Button
+            android:text="Select time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeButton" />
+    </LinearLayout>
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/level" />
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateFragment" />
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeFragment" />
     <LinearLayout
         android:minWidth="25px"
         android:layout_width="match_parent"

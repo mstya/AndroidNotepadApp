@@ -46,6 +46,18 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="AndroidSwitchBackport">
+      <HintPath>Components\betterpickers-1.6.0.1\lib\android\AndroidSwitchBackport.dll</HintPath>
+    </Reference>
+    <Reference Include="BetterPickers">
+      <HintPath>Components\betterpickers-1.6.0.1\lib\android\BetterPickers.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>packages\Xamarin.Android.Support.v4.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="NineOldAndroids">
+      <HintPath>packages\NineOldAndroids.2.4.0\lib\MonoAndroid23\NineOldAndroids.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Note.cs" />
@@ -56,6 +68,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Async\NoteAsyncHandler.cs" />
+    <Compile Include="Fragments\DatepickerFragment.cs" />
+    <Compile Include="Fragments\TimepickerFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\NoteEditor.axml" />
@@ -81,12 +95,14 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_looks_two_white_24dp.png" />
     <AndroidResource Include="Resources\xml\searchable.xml" />
     <AndroidResource Include="Resources\menu\options_menu.xml" />
+    <AndroidResource Include="Resources\values\theme.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -98,5 +114,12 @@
     <Folder Include="Resources\xml\" />
     <Folder Include="Resources\menu\" />
     <Folder Include="Async\" />
+    <Folder Include="Fragments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="betterpickers">
+      <Version>1.6.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>
