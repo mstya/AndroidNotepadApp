@@ -1,5 +1,4 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Widget;
 
 namespace Mono.Samples.Notepad
@@ -32,18 +31,6 @@ namespace Mono.Samples.Notepad
 				});
 				p.Show();
 			};
-			//selectDate.Click += (sender, e) =>
-			//{
-			//	DateTime today = DateTime.Now.Date;
-			//	var p = BetterPickers.CalendarDatePickers.CalendarDatePickerDialog.NewInstance(null, today.Year, today.Month - 1, today.Day);
-
-			//	p.DateSet += (csender, ce) =>
-			//	{
-			//		DateTime date = new DateTime(ce.P1, ce.P2 + 1, ce.P3);
-			//		dateTextView.Text = date.ToShortDateString();
-			//	};
-			//	p.Show(this.FragmentManager, "OK");
-			//};
 		}
 	}
 }

@@ -70,6 +70,7 @@
     <Compile Include="Async\NoteAsyncHandler.cs" />
     <Compile Include="Fragments\DatepickerFragment.cs" />
     <Compile Include="Fragments\TimepickerFragment.cs" />
+    <Compile Include="Recievers\AlarmReceiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\NoteEditor.axml" />
@@ -115,6 +116,7 @@
     <Folder Include="Resources\menu\" />
     <Folder Include="Async\" />
     <Folder Include="Fragments\" />
+    <Folder Include="Recievers\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="betterpickers">

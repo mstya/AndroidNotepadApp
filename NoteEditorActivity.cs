@@ -5,11 +5,13 @@ using Android.OS;
 using Android.Widget;
 using System.Collections.Generic;
 using Android.Support.V4.App;
+using Android.Content;
+using Java.Util;
 
 namespace Mono.Samples.Notepad
 {
 	[Activity(Label = "Edit Note", ScreenOrientation = ScreenOrientation.Sensor, ConfigurationChanges = ConfigChanges.KeyboardHidden | ConfigChanges.Orientation)]
-	public class NoteEditorActivity : FragmentActivity// Activity
+	public class NoteEditorActivity : FragmentActivity
 	{
 		private Note note;
 		private EditText title;
@@ -52,31 +54,10 @@ namespace Mono.Samples.Notepad
 				note = new Note();
 			else
 				note = NoteRepository.GetNote(note_id);
-
-
-			//// Create our Picker Dialog
-			//var p = new BetterPickers.RadialTimePickers.RadialTimePickerDialog();
-
-			//// Set some options
-			//p.SetStartTime(DateTime.Now.Hour, DateTime.Now.Minute);
-			//p.SetDoneText("Finish!");
-
-			//// Wire up the changed handler
-			//p.TimeSet += (sender, e) =>
-			//{
-			//	//ShowToast("RadialTimePicker Set: Hour={0}, Minute={1}", e.P1, e.P2);
-			//};
-
-			//// Show the Dialog
-			//p.Show(this.FragmentManager, null);
-
-
-			//datepickerFragment
-
+			
 			var timeFragment = new TimepickerFragment(this);
 			var dateFragment = new DatepickerFragment(this);
 
-			////Fragment datepickerFragment = this.FindViewById<Fragment>(Resource.Id.datepickerFragment);
 			SupportFragmentManager.BeginTransaction()
 								  .Replace(Resource.Id.dateFragment, dateFragment)
 								  .Commit();
@@ -84,22 +65,6 @@ namespace Mono.Samples.Notepad
 			SupportFragmentManager.BeginTransaction()
 								  .Replace(Resource.Id.timeFragment, timeFragment)
 								  .Commit();
-
-			//While others use the builder pattern like the Date Picker: 
-
-			// Create our picker builder
-			//var p = new BetterPickers.DatePickers.DatePickerBuilder()
-			//	.SetFragmentManager(FragmentManager)
-			//	.SetStyleResId(Resource.Style.BetterPickersDialogFragment_Light);
-
-			//// Add a delegate to handle the picker change      
-			//p.AddDatePickerDialogHandler((reference, year, month, day) =>
-			//{
-			//	ShowToast("DatePicker Set: Ref={0}, Year={1}, Month={2}, Day={3}", reference, year, month, day);
-			//});
-
-			//// Show the Dialog
-			//p.Show();
 		}
 
 		void Save_Button_Click(object sender, EventArgs e)
@@ -108,7 +73,17 @@ namespace Mono.Samples.Notepad
 			note.Title = title.Text;
 			note.Level = levels[imp_level.SelectedItem.ToString()];
 
+			TextView dateTextView = this.FindViewById<TextView>(Resource.Id.dateTextView);
+			TextView timeTextView = this.FindViewById<TextView>(Resource.Id.timeTextView);
+
+			var date = DateTime.Parse(dateTextView.Text);
+			var timeArray = timeTextView.Text.Split(':');
+			var selectedDate = new DateTime(date.Year, date.Month, date.Day, int.Parse(timeArray[0]), int.Parse(timeArray[1]), 0);
+
+			note.ModifiedTime = selectedDate;
+
 			NoteRepository.SaveNote(note);
+			this.SetNotification(selectedDate, note.Id, note.Title);
 			Finish();
 		}
 
@@ -124,6 +99,27 @@ namespace Mono.Samples.Notepad
 			description.SetTextKeepState(note.Description);
 			title.SetTextKeepState(note.Title);
 			imp_level.SetSelection(note.Level - 1);
+		}
+
+		private void SetNotification(DateTime date, long id, string title)
+		{                   
+			Intent alarmIntent = new Intent(this, typeof(AlarmReceiver));
+			alarmIntent.PutExtra("message", title);
+			alarmIntent.PutExtra("title", "Та дааааам!");
+			alarmIntent.PutExtra("note_id", id);
+
+			PendingIntent pendingIntent = PendingIntent.GetBroadcast(this, 0, alarmIntent, PendingIntentFlags.UpdateCurrent);
+			AlarmManager alarmManager = (AlarmManager)this.GetSystemService(Context.AlarmService);
+
+			Calendar calendar = Calendar.Instance;
+			calendar.Set(CalendarField.Year, date.Year);
+			calendar.Set(CalendarField.Month, date.Month - 1);
+			calendar.Set(CalendarField.DayOfMonth, date.Day);
+			calendar.Set(CalendarField.HourOfDay, date.Hour);
+			calendar.Set(CalendarField.Minute, date.Minute);
+			calendar.Set(CalendarField.Second, date.Second);
+
+			alarmManager.Set(AlarmType.Rtc, calendar.TimeInMillis, pendingIntent);
 		}
 	}
 }

@@ -137,7 +137,7 @@ namespace Mono.Samples.Notepad
 						cmd.Parameters.AddWithValue ("@Title", note.Title);
 						cmd.Parameters.AddWithValue ("@Description", note.Description);
 						cmd.Parameters.AddWithValue("@Level", note.Level);
-						cmd.Parameters.AddWithValue ("@Modified", DateTime.Now);
+						cmd.Parameters.AddWithValue ("@Modified", note.ModifiedTime);
 
 						note.Id = (long)cmd.ExecuteScalar ();
 					} else {
@@ -146,7 +146,7 @@ namespace Mono.Samples.Notepad
 						cmd.Parameters.AddWithValue ("@Title", note.Title);
 						cmd.Parameters.AddWithValue ("@Level", note.Level);
 						cmd.Parameters.AddWithValue ("@Description", note.Description);
-						cmd.Parameters.AddWithValue ("@Modified", DateTime.Now);
+						cmd.Parameters.AddWithValue ("@Modified", note.ModifiedTime);
 					
 						cmd.ExecuteNonQuery ();
 					}

@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.Content;
-using Android.Graphics;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -62,17 +61,6 @@ namespace Mono.Samples.Notepad
 			switch (item.ItemId)
 			{
 				case MENU_ITEM_INSERT:
-
-					//Intent alarmIntent = new Intent(this, typeof(AlarmReceiver));
-					//alarmIntent.PutExtra("message", "lalall");
-					//alarmIntent.PutExtra("title", "aasd");
-
-					//PendingIntent pendingIntent = PendingIntent.GetBroadcast(this, 0, alarmIntent, PendingIntentFlags.UpdateCurrent);
-					//AlarmManager alarmManager = (AlarmManager)this.GetSystemService(Context.AlarmService);
-
-					////TODO: For demo set after 5 seconds.
-					//alarmManager.Set(AlarmType.ElapsedRealtime, SystemClock.ElapsedRealtime() + 5 * 1000, pendingIntent);
-
 					var intent = new Intent(this, typeof(NoteEditorActivity));
 					intent.PutExtra("note_id", -1L);
 					StartActivityForResult(intent, 0);
@@ -106,11 +94,11 @@ namespace Mono.Samples.Notepad
 			switch (item.ItemId)
 			{
 				case MENU_ITEM_DELETE:
-					{
-						NoteRepository.DeleteNote(note);
-						PopulateList();
-						return true;
-					}
+				{
+					NoteRepository.DeleteNote(note);
+					PopulateList();
+					return true;
+				}
 			}
 
 			return false;
@@ -130,61 +118,6 @@ namespace Mono.Samples.Notepad
 			base.OnActivityResult(requestCode, resultCode, data);
 
 			PopulateList();
-		}
-	}
-
-	[BroadcastReceiver]
-	public class AlarmReceiver : BroadcastReceiver
-	{
-		public override void OnReceive(Context context, Intent intent)
-		{
-
-			var message = intent.GetStringExtra("message");
-			var title = intent.GetStringExtra("title");
-
-			var notIntent = new Intent(context, typeof(NotesListActivity));
-			var contentIntent = PendingIntent.GetActivity(context, 0, notIntent, PendingIntentFlags.CancelCurrent);
-			//		var manager = Notification.From(context);
-
-			//		var style = new NotificationCompat.BigTextStyle();
-			//		style.BigText(message);
-
-			//		int resourceId;
-			//		if (App.SelectedModel.VehicleType == "Car")
-			//			resourceId = Resource.Drawable.Car;
-			//		else if (App.SelectedModel.VehicleType == "Bike")
-			//			resourceId = Resource.Drawable.Bike;
-			//		else
-			//			resourceId = Resource.Drawable.Other;
-
-			//		var wearableExtender = new NotificationCompat.WearableExtender()
-			//.SetBackground(BitmapFactory.DecodeResource(context.Resources, resourceId))
-			//			;
-
-			//Generate a notification with just short text and small icon
-			var builder = new Notification.Builder(context)
-							.SetContentIntent(contentIntent)
-										  .SetSmallIcon(Resource.Drawable.icon)
-							.SetContentTitle(title)
-							.SetContentText(message)
-							//.SetStyle(style)
-							.SetWhen(Java.Lang.JavaSystem.CurrentTimeMillis())
-										  .SetAutoCancel(true);
-							//.Extend(wearableExtender);
-
-			//var notification = builder.Build();
-			//manager.Notify(0, notification);
-
-			// Build the notification:
-			Notification notification = builder.Build();
-
-			// Get the notification manager:
-			NotificationManager notificationManager =
-				context.GetSystemService(Context.NotificationService) as NotificationManager;
-
-			// Publish the notification:
-			const int notificationId = 0;
-			notificationManager.Notify(notificationId, notification);
 		}
 	}
 }
