@@ -6,7 +6,7 @@ using Android.Widget;
 
 namespace Mono.Samples.Notepad
 {
-	[Activity(MainLauncher = true, Label = "@string/app_name", Icon = "@drawable/icon", LaunchMode = Android.Content.PM.LaunchMode.SingleTop)]
+	[Activity(Label = "@string/app_name", Icon = "@drawable/icon", LaunchMode = Android.Content.PM.LaunchMode.SingleTop)]
 	[IntentFilter(new string[] { "android.intent.action.SEARCH" })]
 	[MetaData(("android.app.searchable"), Resource = "@xml/searchable")]
 	public class NotesListActivity : ListActivity

@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{CB6BAF1A-9CA2-4112-B5A1-6E2B88416781}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="NotesListActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CalculatorActivity.cs">
     <Files>
-      <File FileName="NoteEditorActivity.cs" Line="120" Column="33" />
+      <File FileName="NoteEditorActivity.cs" Line="13" Column="69" />
       <File FileName="NoteRepository.cs" Line="142" Column="33" />
       <File FileName="Note.cs" Line="19" Column="11" />
-      <File FileName="NotesListActivity.cs" Line="149" Column="3" />
+      <File FileName="NotesListActivity.cs" Line="9" Column="12" />
       <File FileName="NoteAdapter.cs" Line="21" Column="43" />
       <File FileName="Resources/xml/searchable.xml" Line="2" Column="1" />
-      <File FileName="Resources/Values/strings.xml" Line="19" Column="27" />
+      <File FileName="Resources/Values/strings.xml" Line="37" Column="4" />
       <File FileName="Properties/AndroidManifest.xml" Line="7" Column="12" />
       <File FileName="Async/NoteAsyncHandler.cs" Line="19" Column="4" />
       <File FileName="Components/betterpickers-1.6.0.1/samples/BetterPickersSample/BetterPickersSample/MainActivity.cs" Line="14" Column="14" />
@@ -15,7 +15,10 @@
       <File FileName="Components/betterpickers-1.6.0.1/samples/BetterPickersSample/BetterPickersSample/ChoiceAdapter.cs" Line="1" Column="1" />
       <File FileName="Fragments/DatepickerFragment.cs" Line="21" Column="1" />
       <File FileName="Fragments/TimepickerFragment.cs" Line="27" Column="66" />
-      <File FileName="Recievers/AlarmReceiver.cs" Line="1" Column="1" />
+      <File FileName="Recievers/AlarmReceiver.cs" Line="5" Column="31" />
+      <File FileName="MenuActivity.cs" Line="28" Column="72" />
+      <File FileName="ColorpickerActivity.cs" Line="47" Column="4" />
+      <File FileName="CalculatorActivity.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -26,5 +29,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Notepad AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.SH39WW907277" AndroidDesignerPreferredTheme="Theme.Holo.Light" />
+  <MonoDevelop.Ide.ItemProperties.Notepad AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" AndroidDesignerPreferredTheme="Theme.Holo.Light" />
 </Properties>

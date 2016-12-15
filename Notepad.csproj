@@ -71,6 +71,9 @@
     <Compile Include="Fragments\DatepickerFragment.cs" />
     <Compile Include="Fragments\TimepickerFragment.cs" />
     <Compile Include="Recievers\AlarmReceiver.cs" />
+    <Compile Include="MenuActivity.cs" />
+    <Compile Include="ColorpickerActivity.cs" />
+    <Compile Include="CalculatorActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\NoteEditor.axml" />
@@ -97,6 +100,11 @@
     <AndroidResource Include="Resources\xml\searchable.xml" />
     <AndroidResource Include="Resources\menu\options_menu.xml" />
     <AndroidResource Include="Resources\values\theme.xml" />
+    <AndroidResource Include="Resources\Layout\menu.axml" />
+    <AndroidResource Include="Resources\Layout\Calculator.axml" />
+    <AndroidResource Include="Resources\Layout\Colorpicker.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\button.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\buttonOperation.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\strings.xml" />

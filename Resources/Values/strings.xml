@@ -26,4 +26,13 @@
 	<string name="search_hint">Введите запрос</string>
 	<string name="settings_description">Definitions of words</string>
 	<string name="menu_search">Search</string>
+
+	  <string name="Colorpicker">Colorpicker</string>
+	  <string name="Calc">Calc</string>
+	  <string name="List">List</string>
+
+	  <string name="gValue">G:</string>
+	  <string name="rValue">R:</string>
+	  <string name="bValue">B:</string>
+
 </resources>
